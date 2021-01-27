@@ -190,14 +190,36 @@ Let's imagine our spring-music app is experiencing latency.
     ```
 
 
+# Lets check for expired certificates using the CredHub CLI 
+1. First SSH to the Bosh Director VM 
+    ```
+    ssh boshvm
+    ```
+2.  Next authenticate to CredHub using your bosh credentials 
+    ```
+    credhub login \
+      --client-name=<BoshClient> \
+      --client-secret=<BoshSecret>
+    ```
+3.  Run the following credhub command to view any expired certificates. 
+    ```
+    credhub get -n /services/tls_ca -j | jq -r .value.ca  | openssl x509 -text -noout | grep -A 2 "Validity"
+    ```
+    The output should show 2 dates.  The first date from the output lists when your certifate became valid. 
+    The second date will list when your certifate expires.    
+    Alternatively you could run this command without grep to get more details.  
+    ```
+    credhub get -n /services/tls_ca -j | jq -r .value.ca  | openssl x509 -text -noout
+    ```
+    If your certificate has already expired please follow the knowledge base artical below. 
+    https://community.pivotal.io/s/article/How-to-rotate-and-already-expired-services-tls-ca-certificate?language=en_US
+    
+    
+    
+    
 
 
 # To be continued --> 
-
-
-Rotating Certificates 
-    1. Check for expired certificates 
-    --> https://docs.pivotal.io/ops-manager/2-10/security/pcf-infrastructure/check-expiration.html#check-ui
 
 
 Determine why a Diego Cell under heavy load 
