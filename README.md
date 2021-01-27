@@ -15,16 +15,19 @@
 # TAS 101 Workshop - SRE Focus 
 
 # Application fails to start after issuing cf push command.  
-
-1. CD into broken-spring-music directory  
+1. Clone the broken-spring-music git repo. 
+    ```
+    git clone https://github.com/jrobinsonvm/broken-spring-music.git
+    ```
+2. CD into broken-spring-music directory  
     ```
     cd broken-spring-music
     ```
-2. Change the name of your app to your team name. (Edit the manifest.yml file) 
+3. Change the name of your app to your team name. (Edit the manifest.yml file) 
     ```
     vi manifest.yml
     ```
-3. Run "cf push" to deploy the app
+4. Run "cf push" to deploy the app
     ```
     cf push
     ```
@@ -64,11 +67,11 @@
     cf push -t TIMEOUT: Controls the maximum time that Cloud Foundry allows to elapse between starting an app and the first healthy response from the app. When you use this flag, the cf CLI ignores any app start timeout value set in the manifest. Value set in seconds.
     ```
 
-4. To increase the memory limit edit the mainifest.yaml file and replace 0.5G with 1G.  
+5. To increase the memory limit edit the mainifest.yaml file and replace 0.5G with 1G.  
     ```
     vi manifest.yml 
     ```
-5.  Now redeploy the application 
+6.  Now redeploy the application 
     ```
     cf push 
     ```
