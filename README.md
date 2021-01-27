@@ -205,8 +205,8 @@ Let's imagine our spring-music app is experiencing latency.
     ```
     credhub get -n /services/tls_ca -j | jq -r .value.ca  | openssl x509 -text -noout | grep -A 2 "Validity"
     ```
-    The output should show 2 dates.  The first date from the output lists when your certifate became valid. 
-    The second date will list when your certifate expires.    
+    The output should show 2 dates.  The first date from the output lists when your certificate became valid. 
+    The second date will list when your certificate expires.    
     Alternatively you could run this command without grep to get more details.  
     ```
     credhub get -n /services/tls_ca -j | jq -r .value.ca  | openssl x509 -text -noout
