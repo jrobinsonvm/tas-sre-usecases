@@ -30,7 +30,38 @@
     ```
     cf a
     ```
-2. CD into broken-spring-music directory  
+2. TAS supports configuring 3 different types of health checks.  Port, Process and HTTP.   
+   - First let's implement a HTTP Health Check for your test-app application.    
+   
     ```
-    cf set-health-check <test-app-<team name> HEALTH-CHECK-TYPE --endpoint <CUSTOM-HTTP-ENDPOINT>
+    cf set-health-check test-app-<team name> http --endpoint /
     ```
+    The output from the above command should look similiar to the following 
+    
+    ```
+        bash-5.0$ cf set-health-check test-app http --endpoint /
+        Updating health check type for app test-app in org system / space workshop as admin...
+        OK
+        TIP: An app restart is required for the change to take effect.
+
+    ```
+    Our test application has multiple endpoints so we will want to make sure they are all monitored. 
+    Let's implement HTTP Health Check for the rest of our endpoints.    
+    ```
+    cf set-health-check test-app-<team name> http --endpoint /port
+    ```
+    
+    ```
+    cf set-health-check test-app-<team name> http --endpoint /index
+    ```
+    
+    ```
+    cf set-health-check test-app-<team name> http --endpoint /env
+    ```
+      
+   - Next let's configure the health check to monitor a port our app is listening on. 
+     Let's use port 80 to monitor our application.   
+    ```
+    cf set-health-check test-app-<team name> http --endpoint /env
+    ```
+
