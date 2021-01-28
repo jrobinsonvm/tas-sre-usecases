@@ -26,11 +26,11 @@
 
 - First we will configure a health check for our test-app application that's already deployed.   
 
-1.  
+1.  Run cf apps to get a list of your running applications.   You should see your test-app application deployed.   
     ```
-    git clone https://github.com/jrobinsonvm/broken-spring-music.git
+    cf a
     ```
 2. CD into broken-spring-music directory  
     ```
-    cd broken-spring-music
+    cf set-health-check <test-app-<team name> HEALTH-CHECK-TYPE --endpoint <CUSTOM-HTTP-ENDPOINT>
     ```
