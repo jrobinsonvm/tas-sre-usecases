@@ -59,6 +59,7 @@
     cf set-health-check test-app-<team name> http --endpoint /env
     ```
       
+      
    - Next let's configure the health check to monitor the port(s) our app is listening on. 
     ```
     cf set-health-check test-app-<team name> port
@@ -70,6 +71,7 @@
         OK
         TIP: An app restart is required for the change to take effect.
     ```
+    
     
    - Finally let's configure the health check to monitor our app's processes. 
     ```
