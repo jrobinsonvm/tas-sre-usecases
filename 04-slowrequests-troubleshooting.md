@@ -17,11 +17,30 @@
 # Troubleshooting slow requests in TAS 
 
 Let's imagine our spring-music app is experiencing latency.  
-1. To better understand the issue lets measure the total round-trip of my app 
+
+1. To better understand the issue lets measure the total round-trip of our app.  
+   To do this you will need to know the URI or route to your application.  
+   
+   Run cf apps to get a list of your applications and their corresponding urls.  
+    ```
+    cf apps
+    ```
+   Now with this information, run the following curl command with the time command to measure the total round trip of your request.   
     ```
     time curl -v <your-app-spring-music.vmware.com>
     ```
     Examine the output and take note of the "real" time.  
+    
+    ```
+    * Connection #0 to host spring-music-fixme-active-roan-bn.cfapps.haas-236.pez.pivotal.io left intact
+        real	0m0.201s
+        user	0m0.002s
+        sys     	0m0.010s
+        
+    ```
+    
+    
+    
 2. View the request time in your app's logs 
     From one terminal enter the following command
     ```
