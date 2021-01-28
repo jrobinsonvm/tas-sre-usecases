@@ -59,9 +59,26 @@
     cf set-health-check test-app-<team name> http --endpoint /env
     ```
       
-   - Next let's configure the health check to monitor a port our app is listening on. 
-     Let's use port 80 to monitor our application.   
+   - Next let's configure the health check to monitor the port(s) our app is listening on. 
     ```
-    cf set-health-check test-app-<team name> http --endpoint /env
+    cf set-health-check test-app-<team name> port
     ```
-
+    
+    ```
+        bash-5.0$ cf set-health-check test-app port 
+        Updating health check type for app test-app in org system / space workshop as admin...
+        OK
+        TIP: An app restart is required for the change to take effect.
+    ```
+    
+   - Finally let's configure the health check to monitor our app's processes. 
+    ```
+    cf set-health-check test-app-<team name> process
+    ```
+    
+    ```
+        bash-5.0$ cf set-health-check test-app process
+        Updating health check type for app test-app in org system / space workshop as admin...
+        OK
+        TIP: An app restart is required for the change to take effect.
+    ```
