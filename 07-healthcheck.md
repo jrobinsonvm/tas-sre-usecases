@@ -31,7 +31,7 @@
     cf a
     ```
 2. TAS supports configuring 3 different types of health checks.  Port, Process and HTTP.   
-   - First let's implement a HTTP Health Check for your test-app application.    
+- First let's implement a HTTP Health Check for your test-app application.    
    
     ```
     cf set-health-check test-app-<team name> http --endpoint /
@@ -60,7 +60,7 @@
     ```
       
       
-   - Next let's configure the health check to monitor the port(s) our app is listening on. 
+- Next let's configure the health check to monitor the port(s) our app is listening on. 
     ```
     cf set-health-check test-app-<team name> port
     ```
@@ -73,7 +73,7 @@
     ```
     
     
-   - Finally let's configure the health check to monitor our app's processes. 
+- Finally let's configure the health check to monitor our app's processes. 
     ```
     cf set-health-check test-app-<team name> process
     ```
