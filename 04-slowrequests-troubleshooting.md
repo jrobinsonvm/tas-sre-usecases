@@ -70,14 +70,35 @@ Let's imagine our spring-music app is experiencing latency.
         * If so, is there a problem in a downstream app?
     * Does your app log where it spends time? 
 4. Remove the load balancer from the request path 
-    First obtain the deployment id and router guid using bosh 
+    In order to do this we will need to obtain the deployment id and router guid using bosh 
+    
+    This means we need to SSH to our Jumphost which has connectivity to our Bosh Director.   
+    Please use the instructions which were provided prior to the lab starting.   
+    ```
+    ssh -i privatekey ubuntu@server.vmware.com 
+    ```
+    Once inside the jumphost we will need to SSH to our BOSH Director.  
+    ```
+    ssh ubuntu@BoshDirector.vmware.com 
+    ```
+    Once inside of the BOSH Director we will need to authenticate.
+    ```
+    export BOSH_CLIENT=ops_manager BOSH_CLIENT_SECRET=<BOSHSECRETHERE> BOSH_CA_CERT=/var/tempest/workspaces/default/root_ca_certificate                                 BOSH_ENVIRONMENT=<BOSH-IPADDRESS> bosh
+    ```
+    Now that we have setup our environment with our BOSH Credentials we can now run bosh commands.   
+    
     List the vms within your bosh environment 
     ```
     bosh vms 
     ```
-    Select one of your router vms and record its GUID and deployment ID.   
-    Now run the following command to ssh into the router.  
-    Replace the variables with your reouter GUID and deployment ID.  
+    Select one of your router vms and record its GUID and deployment ID. 
+    
+    Since this list may be extensive, use grep to filter your options.  
+    ```
+    bosh vms |grep router
+    ```
+    Now run the following command to ssh into one of your routers.  
+    Replace the variables below with your router's GUID and deployment ID.  
     ```
     bosh ssh -d <deploymentID> router/<GUID>
     ```
