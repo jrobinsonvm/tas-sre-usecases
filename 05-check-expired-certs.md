@@ -23,6 +23,14 @@
     ```
     credhub api https://<Bosh-Endpoint>:8844 --ca-cert=/var/tempest/workspaces/default/root_ca_certificate
     ```
+    
+    Example Output: 
+   ``` 
+        ubuntu@opsmgr-01-haas-236-pez-pivotal-i:~$ credhub api https://192.168.1.11:8844 --ca-cert=/var/tempest/workspaces/default/root_ca_certificate
+        Setting the target url: https://192.168.1.11:8844
+   ```
+
+
 3.  Next authenticate to CredHub using your bosh credentials 
     ```
     credhub login \
