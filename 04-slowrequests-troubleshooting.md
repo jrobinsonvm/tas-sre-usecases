@@ -267,4 +267,5 @@ Example Output:
     ```
     
 For additional detail on troubleshooting slow connectivity please see the following url. 
+
 https://docs.pivotal.io/application-service/2-10/adminguide/troubleshooting-router-error-responses.html
