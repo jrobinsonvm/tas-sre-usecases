@@ -1,21 +1,10 @@
-# Troubleshooting Use Cases:
+## Goal
 
-:  
-        <!-- 
-        https://docs.cloudfoundry.org/devguide/deploy-apps/large-app-deploy.html
-        https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#time  
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html 
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html#app_logs
-        https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#time
-        https://docs.pivotal.io/ops-manager/2-10/security/pcf-infrastructure/check-expiration.html#check-ui
-        https://docs.cloudfoundry.org/concepts/http-routing.html#app-instance-routing
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html#duplicate-latency
-        -->
+One of the worst thing that could happen to your platform is letting your certificates expire.   Once they expire normal operations can and will be eventually affected.   Let's see how we can rotate your certificates to prevent this from happening.    
 
-# TAS 101 Workshop - SRE Focus 
+---
 
-# You can also use the CredHub CLI to rotate your certicates for you. 
-# Part 1 of Cert Rotation 
+## Part 1 of Cert Rotation 
   Since this is a very disruptive process we will NOT implement these steps during the workshop.   
   The following steps will show you how to rotate your Services TLS Certificate.  
 1. Check if CredHub has a new temporary certificate from a previous rotation attempt.
@@ -192,7 +181,7 @@
     
 11. Now from Ops manager, select Review Pending Changes and click Apply.   
 
-# Part 2 of Cert Rotation 
+## Part 2 of Cert Rotation 
 12. After changes have been successfully applied we will need to set the new Services TLS Certificate. 
     If you are using an exisiting certificate use the following command. 
     ```
@@ -222,7 +211,7 @@
     Expand the errands view and enable the errand to upgrade all service instances.        
 16. Now from Ops manager, select Review Pending Changes and click Apply.   
 
-# Part 3 of Cert Rotation 
+## Part 3 of Cert Rotation 
 Now we will need to remove the old services TLS Certificate 
 
 17. From Ops Manager select the Bosh Director tile.  
