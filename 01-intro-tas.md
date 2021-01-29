@@ -27,7 +27,12 @@
 
 ---
 
+VMware Tanzu Application Service for VMs
+  <img src="https://github.com/jrobinsonvm/tas-sre-usecases/blob/main/tas-2.png?raw=true" alt="TAS "/>
+ 
 
+
+---
 # Installing the CF CLI
 
 - https://docs.cloudfoundry.org/cf-cli/install-go-cli.html
