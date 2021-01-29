@@ -56,7 +56,7 @@ cf push -v
 Example Output: 
 
 ```
-    REQUEST: [2021-01-29T01:42:14Z]
+REQUEST: [2021-01-29T01:42:14Z]
 GET /api/v1/read/8dac8193-ee26-44ec-81d8-de9753649be5?envelope_types=LOG&start_time=1611884532716859524 HTTP/1.1
 Host: log-cache.run.haas-236.pez.pivotal.io
 User-Agent: cf/6.53.0+8e2b70a4a.2020-10-01 (go1.13.8; amd64 linux)
@@ -72,11 +72,11 @@ Server: nginx
 X-Content-Type-Options: nosniff
 X-Vcap-Request-Id: eaa5fa06-4112-4a32-71af-d09465d56264::8a8466d7-9cda-404d-a45a-d02d1cc02b23
 {
-  "0": {
-    "since": 1611884531,
-    "state": "CRASHED",
-    "uptime": 2
-  }
+"0": {
+"since": 1611884531,
+"state": "CRASHED",
+"uptime": 2
+}
 }
 
 
@@ -90,15 +90,15 @@ ERROR: [2021-01-29T01:42:14Z]
 Get https://log-cache.run.haas-236.pez.pivotal.io/api/v1/read/8dac8193-ee26-44ec-81d8-de9753649be5?envelope_types=LOG&start_time=1611884532716859524: context canceled
 
 
-
+```
 
 Please try running the cf events command to get a list of key events with their corresponding timestamps.   
 
-    
-    cf events spring-music-<team name>
-        
-    
-   Example Output:
+`
+cf events spring-music-<team name>
+`
+
+Example Output:
     
     
             2021-01-28T18:59:15.00+0000   audit.app.update           admin                disk_quota: 1024, instances: 1, memory: 1024, environment_json: [PRIVATE DATA HIDDEN]
@@ -119,8 +119,9 @@ Please try running the cf events command to get a list of key events with their 
 
     
     
- Use the cf env command to view the environment variables that you have set using the cf set-env command and the variables in the container environment:
-    
+Use the cf env command to view the environment variables that you have set using the cf set-env command and the variables in the container environment:
+
+
     cf env
     
 Example Output: 
@@ -186,6 +187,7 @@ Controls the maximum time that TAS allows to elapse between starting an app and 
     ```
     vi manifest.yml 
     ```
+
 6.  Now redeploy the application 
     ```
     cf push 
