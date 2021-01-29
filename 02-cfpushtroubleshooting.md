@@ -94,9 +94,9 @@
     
   Please try running the cf events command to get a list of key events with their corresponding timestamps.   
     
-    ```
+    
     cf events spring-music-<team name>
-    ```    
+        
     
    Example Output:
     
