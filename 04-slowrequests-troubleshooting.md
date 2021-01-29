@@ -58,6 +58,7 @@ Let's imagine our spring-music app is experiencing latency.
     You should now see the requst in your terminal with the logs.   
     Type ctrl+c to exit the streaming logs.   
 3. Duplicate latency on another endpoint
+
     We will now use our test-app to measure the latency we are seeing in our spring-music app.   
     First SSH into our test-app 
     ```
