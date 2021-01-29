@@ -60,7 +60,7 @@
     credhub get -n /services/tls_ca -j | jq -r .value.ca  | openssl x509 -text -noout
     ```
     
-    For more detail on rotating your certificates please see -> https://docs.pivotal.io/ops-manager/2-10/security/pcf-infrastructure/check-expiration.html
+    For more detail on checking your certificates please see -> https://docs.pivotal.io/ops-manager/2-10/security/pcf-infrastructure/check-expiration.html
  
 
     If your certificate has already expired please follow the knowledge base article below. 
