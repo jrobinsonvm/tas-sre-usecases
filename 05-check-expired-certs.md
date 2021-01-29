@@ -61,4 +61,5 @@
     ```
 
     If your certificate has already expired please follow the knowledge base article below. 
+    
     https://community.pivotal.io/s/article/How-to-rotate-and-already-expired-services-tls-ca-certificate?language=en_US
