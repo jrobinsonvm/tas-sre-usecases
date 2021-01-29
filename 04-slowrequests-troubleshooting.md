@@ -1,20 +1,10 @@
-# Troubleshooting Use Cases:
+## Goal
 
-:  
-        <!-- 
-        https://docs.cloudfoundry.org/devguide/deploy-apps/large-app-deploy.html
-        https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#time  
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html 
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html#app_logs
-        https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#time
-        https://docs.pivotal.io/ops-manager/2-10/security/pcf-infrastructure/check-expiration.html#check-ui
-        https://docs.cloudfoundry.org/concepts/http-routing.html#app-instance-routing
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html#duplicate-latency
-        -->
+Our application is experiencing extreme latency and causing our systems to become degraded.   Let's troubleshoot using the CF CLI and BOSH to determine the root cause.   
 
-# TAS 101 Workshop - SRE Focus 
+---
 
-# Troubleshooting slow requests in TAS 
+## Troubleshooting slow requests in TAS 
 
 Let's imagine our spring-music app is experiencing latency.  
 
@@ -276,3 +266,5 @@ Example Output:
     time curl <IPaddressOfDiegoCellforSpringMusicApp>
     ```
     
+For additional detail on troubleshooting slow connectivity please see the following url. 
+https://docs.pivotal.io/application-service/2-10/adminguide/troubleshooting-router-error-responses.html
