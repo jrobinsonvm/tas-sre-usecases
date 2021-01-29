@@ -120,10 +120,10 @@
     
     
  Use the cf env command to view the environment variables that you have set using the cf set-env command and the variables in the container environment:
-    ```
+    
     cf env
-    ```
-            Example Output: 
+    
+Example Output: 
             
             {
          "VCAP_APPLICATION": {
