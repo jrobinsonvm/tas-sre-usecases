@@ -1,20 +1,12 @@
-# Troubleshooting Use Cases:
+## Goal
 
-:  
-        <!-- 
-        https://docs.cloudfoundry.org/devguide/deploy-apps/large-app-deploy.html
-        https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#time  
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html 
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html#app_logs
-        https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#time
-        https://docs.pivotal.io/ops-manager/2-10/security/pcf-infrastructure/check-expiration.html#check-ui
-        https://docs.cloudfoundry.org/concepts/http-routing.html#app-instance-routing
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html#duplicate-latency
-        -->
+As a platform engineer or operator it's important to understand various troubleshooting techniques using the cf cli.   Let's take some time to role play a scanario where your application is not starting and you need to find the root cause to resolve the issue.   
 
-# TAS 101 Workshop - SRE Focus 
+---  
 
-# Application fails to start after issuing cf push command.  
+## Application fails to start after issuing cf push command.  
+Let's begin by cloning a repository of a broken springboot application.   
+
 1. Clone the broken-spring-music git repo. 
 ```
 git clone https://github.com/jrobinsonvm/broken-spring-music.git
@@ -192,3 +184,10 @@ Controls the maximum time that TAS allows to elapse between starting an app and 
     ```
     cf push 
     ```
+    
+    
+ For additional details on troubleshooting your application starting please see the following.  
+ 
+ https://community.pivotal.io/s/article/How-to-troubleshoot-an-application-that-fails-only-when-run-on-Cloud-Foundry?language=en_US
+ 
+ 
