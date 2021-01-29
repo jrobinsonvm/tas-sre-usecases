@@ -1,18 +1,8 @@
-# Troubleshooting Use Cases:
+## Goal
 
-:  
-        <!-- 
-        https://docs.cloudfoundry.org/devguide/deploy-apps/large-app-deploy.html
-        https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#time  
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html 
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html#app_logs
-        https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#time
-        https://docs.pivotal.io/ops-manager/2-10/security/pcf-infrastructure/check-expiration.html#check-ui
-        https://docs.cloudfoundry.org/concepts/http-routing.html#app-instance-routing
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html#duplicate-latency
-        -->
+One of the worst thing that could happen to your platform is letting your certificates expire.   Once they expire normal operations can and will be eventually affected.   Let's see how we can check your certificates via the CredHub CLI.  
 
-# TAS 101 Workshop - SRE Focus 
+---
 
 # Lets check for expired certificates using the CredHub CLI 
 1. First SSH to the Bosh Director VM 
