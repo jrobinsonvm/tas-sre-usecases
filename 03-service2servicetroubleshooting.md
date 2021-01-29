@@ -1,20 +1,11 @@
-# Troubleshooting Use Cases:
+## Goal
 
-:  
-        <!-- 
-        https://docs.cloudfoundry.org/devguide/deploy-apps/large-app-deploy.html
-        https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#time  
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html 
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html#app_logs
-        https://docs.cloudfoundry.org/devguide/deploy-apps/troubleshoot-app-health.html#time
-        https://docs.pivotal.io/ops-manager/2-10/security/pcf-infrastructure/check-expiration.html#check-ui
-        https://docs.cloudfoundry.org/concepts/http-routing.html#app-instance-routing
-        https://docs.cloudfoundry.org/adminguide/troubleshooting_slow_requests.html#duplicate-latency
-        -->
+Let's assume your application is having trouble communicating with another applicaiton instance.   
+Let's see what steps we can take to get to a resolution.   
 
-# TAS 101 Workshop - SRE Focus 
+---
 
-# Let's determine if a route is accessible from one app to another app or service.   
+## Let's determine if a route is accessible from one app to another app or service.   
 
 If no other apps are available for testing you can deploy a test app to test connectivity to our spring-music app
 
@@ -122,3 +113,7 @@ Example Output:
         </head>
         </body>
         </html>
+
+
+For additional details on troubleshooting your application's connectivity please see the url below.  
+https://docs.pivotal.io/application-service/2-10/adminguide/troubleshooting-router-error-responses.html
