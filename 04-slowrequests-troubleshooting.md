@@ -214,11 +214,58 @@ Example Output:
     time curl -v <your-app-spring-music.vmware.com> 
     ```
 5. Remove Gorouter from the request path 
-    Retrieve the IP Address and Port number of the Diego Cell where your app is running 
+
+   (From the second terminal)
+   
+   Retrieve the IP Address and Port number of the Diego Cell where your app is running 
+   
     ```
     cf ssh spring-music-<team name> -c "env |grep CF_INSTANCE_ADDR"
     ```
-    The output should provide you with an IP address 
+    The output should provide you with an IP address (Save this for later) 
+    
+    ```
+    bash-5.0$ cf ssh spring-music-fixme -c "env |grep CF_INSTANCE_ADDR"
+    CF_INSTANCE_ADDR=192.168.2.38:61012
+
+    ```
+    
+    You could have also ran the following command which provides slightly more detail.  
+    ```
+    cf curl /v2/apps/$(cf app test-app --guid)/stats
+    ```
+    
+    Example Output: 
+    
+    ```
+        bash-5.0$ cf curl /v2/apps/$(cf app test-app --guid)/stats
+        {
+           "0": {
+              "state": "RUNNING",
+              "isolation_segment": null,
+              "stats": {
+                 "name": "test-app",
+                 "uris": [
+                    "test-app-anxious-wolverine-ug.cfapps.haas-236.pez.pivotal.io"
+                 ],
+                 "host": "192.168.2.36",
+                 "port": 61016,
+                 "uptime": 5145,
+                 "mem_quota": 268435456,
+                 "disk_quota": 1073741824,
+                 "fds_quota": 16384,
+                 "usage": {
+                    "time": "2021-01-29T04:19:53+00:00",
+                    "cpu": 0.001660650909655187,
+                    "mem": 15761408,
+                    "disk": 12312576
+                 }
+              }
+           }
+        }
+    ```
+    
+    
     Now we will use bosh to ssh back into our router VM
     ```
     bosh ssh -d <deploymentID> router/<GUID>
@@ -228,3 +275,4 @@ Example Output:
     ```
     time curl <IPaddressOfDiegoCellforSpringMusicApp>
     ```
+    
