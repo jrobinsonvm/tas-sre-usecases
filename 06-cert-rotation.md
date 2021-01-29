@@ -238,3 +238,13 @@ Now we will need to remove the old services TLS Certificate
 22. Ensure that errands have been enabled to upgrade all service instances. 
 
 23. Click Apply Changes.   
+
+
+    For additional detail on checking your certificates 
+    please see -> https://docs.pivotal.io/ops-manager/2-10/security/pcf-infrastructure/services_tls_ca_rotate.html
+ 
+
+    If your certificate has already expired please follow the knowledge base article below. 
+    
+    https://community.pivotal.io/s/article/How-to-rotate-and-already-expired-services-tls-ca-certificate?language=en_US
+
