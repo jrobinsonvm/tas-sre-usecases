@@ -42,7 +42,8 @@ Let's imagine our spring-music app is experiencing latency.
     
     
 2. View the request time in your app's logs 
-    From one terminal enter the following command
+
+   From one terminal enter the following command
     ```
     cf logs spring-music-<team name>
     ```
