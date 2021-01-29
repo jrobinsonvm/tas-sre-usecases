@@ -156,9 +156,40 @@
     ```
     credhub curl -p /api/v1/certificates?name=%2Fservices%2Ftls_ca
     ```
+    
+    Example Output: 
+    
+    ```
+        ubuntu@opsmgr-01-haas-236-pez-pivotal-i:~$ credhub curl -p /api/v1/certificates?name=%2Fservices%2Ftls_ca
+        {
+          "certificates": [
+            {
+              "id": "0af2cf10-c451-4c50-97aa-0691da25ce10",
+              "name": "/services/tls_ca",
+              "signed_by": "/services/tls_ca",
+              "signs": [],
+              "versions": [
+                {
+                  "certificate_authority": true,
+                  "expiry_date": "2026-01-19T15:13:47Z",
+                  "generated": true,
+                  "id": "f15728c3-e8eb-4ea6-9adf-652ebc587ed5",
+                  "self_signed": true,
+                  "transitional": false
+                }
+              ]
+            }
+          ]
+        }
+
+    ```
     The output from the above command should give you a list of services which are depenedent on the Services TLS CA Certificate.  
+    
 10. Now for each service tile listed in the previous output 
+
     Expand the errands view and enable the errand to upgrade all service instances.        
+    
+    
 11. Now from Ops manager, select Review Pending Changes and click Apply.   
 
 # Part 2 of Cert Rotation 
